@@ -1,6 +1,14 @@
 # Resque::PriorityEnqueue
 
+A plugin that allows enqueuing a job at the front of a queue!
 
+Normally, you'd want to place jobs into queues at the end, for fairness.
+
+But occasionally, you get a Very Important Job that needs to jump to the front of the line, so this
+allows for that.
+
+
+This was developed and tested on Resque 1.21.
 
 ## Installation
 
@@ -18,7 +26,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Instead of the standard:
+```ruby
+  Resque.enqueue ....
+```
+Use:
+```ruby
+  Resque.priority_enqueue ....
+```
+
+And the job will be pushed at the front of the line.
 
 ## Contributing
 
@@ -27,3 +44,5 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+
